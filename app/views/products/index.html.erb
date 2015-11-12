@@ -3,10 +3,14 @@
 
 <h1>Products</h1>
 
-	<table>
-		<% @products.each do |product| %>
-		<tr><p>Product: <%= product.name %></p></tr>
-		<tr><p>Description: <%= product.description %></p></tr>
-		<tr><p>Price: <%= product.price_in_cents %></p></tr>
+<% link_to "New_product", "/products/new" %>
+	
+		<%= @products.each do |product| %>
+		<p>Product: <%= product.name %>, <%= product.description %></p>
+	
+		
+		
+		<p><%= product.price_in_cents %></p>
 	<% end %>
-	</table>
+
+	
