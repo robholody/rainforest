@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  before_filter :nsure_logged_in, only: [:create, :destroy]
 	before_filter :load_product
 
   def show
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     #   user_id: current_user.id
     # )
 
-	if @review.stack
+	if @review.save
 		redirect_to products_path, notice: 'Review created successfully'
 	else
 		render 'products/show'
