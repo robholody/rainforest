@@ -5,12 +5,10 @@
 
 <% link_to "New_product", "/products/new" %>
 	
-		<%= @products.each do |product| %>
-		<p>Product: <%= product.name %>, <%= product.description %></p>
-	
-		
-		
-		<p><%= product.price_in_cents %></p>
-	<% end %>
+	<%= @products.each do |product| %>
+	<p>Product: <%= product.name %></p> 
+	<p>Description: <%= product.description %><p>
+	<p>Price: <%= product.price_in_cents %></p>
+<% end %>
 
 	

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root 'sessions#new'
+
+    # 
+
   # get 'reviews/show'
 
   # get 'reviews/create'
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :products do
-    resources :reviews, only: [:show, :create, :destroy]
+  resources :reviews, only: [:show, :create, :destroy]
   end
 
   # resources replaces below routes
